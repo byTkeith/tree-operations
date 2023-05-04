@@ -10,14 +10,14 @@ import java.io.IOException;
 import java.util.Collection;
 //import java.util.List;
 import java.util.Queue;
-//import java.util.Random;
+
 import java.util.Map;
 import java.util.LinkedList;
 import java.util.HashMap;
 import java.util.NoSuchElementException;
 import java.util.PriorityQueue;
 import java.util.Scanner;
-import java.util.StringTokenizer;
+
 
 // Graph class: evaluate shortest paths.
 //
@@ -35,7 +35,10 @@ import java.util.StringTokenizer;
 // Some error checking is performed to make sure graph is ok,
 // and to make sure graph satisfies properties needed by each
 // algorithm.  Exceptions are thrown if errors are detected.
-
+/*
+ * class that takes the count of edges and vertex processing 
+ * takes the count of priority queue operation
+ */
 public class GraphExperiment {
     public static final double INFINITY = Double.MAX_VALUE;
     private Map<String, Vertex> vertexMap = new HashMap<String, Vertex>();
@@ -278,44 +281,7 @@ public class GraphExperiment {
             throw new GraphException("Graph has a cycle!");
     }
 
-    /**
-     * Process a request; return false if end of file.
-     */
-    /*
-     * public static boolean processRequest( Scanner in, Graph g )
-     * {
-     * try
-     * {
-     * System.out.print( "Enter start node:" );
-     * String startName = in.nextLine( );
-     * 
-     * System.out.print( "Enter destination node:" );
-     * String destName = in.nextLine( );
-     * 
-     * System.out.print( "Enter algorithm (u, d, n, a ): " );
-     * String alg = in.nextLine( );
-     * 
-     * if( alg.equals( "u" ) )
-     * g.unweighted( startName );
-     * else if( alg.equals( "d" ) )
-     * {
-     * g.dijkstra( startName );
-     * g.printPath( destName );
-     * }
-     * else if( alg.equals( "n" ) )
-     * g.negative( startName );
-     * else if( alg.equals( "a" ) )
-     * g.acyclic( startName );
-     * 
-     * g.printPath( destName );
-     * }
-     * catch( NoSuchElementException e )
-     * { return false; }
-     * catch( GraphException e )
-     * { System.err.println( e ); }
-     * return true;
-     * }
-     **/
+    
 
     /**
      * A main routine that:
@@ -330,35 +296,10 @@ public class GraphExperiment {
 
         GraphExperiment g = new GraphExperiment();
 
-        // Random costs= new Random();
-
-        /*
-         * try{
-         * 
-         * //String vertexName= "vertex"+Integer.toString(w)
-         * 
-         * FileWriter writer = new FileWriter("Dataset.v50.e80", true ) ;
-         * for(int i=0; i<50;i++){
-         * //if(i==i){continue;}
-         * for(int j=0; j<50 ; j++){
-         * if(i==j){
-         * continue;
-         * }
-         * if(costs.nextInt(2)==0){
-         * int weight = costs.nextInt(80) + 1;
-         * // vertices.get(v).add(new Path(vi, weight));
-         * String twoVertices= "vertex"+i+" "+"vertex"+j;
-         * writer.write(twoVertices+" "+weight+"\n");
-         * //writer.close();
-         * }
-         * }//writer.close();
-         * }writer.close();}//writer.close
-         * catch(IOException e){System.out.println("An error occured");
-         * e.printStackTrace();}
-         */
+        
 
         try {
-            FileReader fin = new FileReader("Dataset.v10.e20");// args[0]
+            FileReader fin = new FileReader("Dataset.v20.e35");// args[0]
             // String startVertex= fin[0];
 
             Scanner graphFile = new Scanner(fin);
@@ -381,56 +322,9 @@ public class GraphExperiment {
         } catch (IOException e) {
             System.err.println(e);
         }
-        // g.printPath(secondVertex);
-        // g.printPath(secondVertex);
-        // read the first string and store as start node
-        // g.dijkstra(startVertex);;
-        // System.out.println(firstVertex);
-        // System.out.println(secondVertex);
-        // System.out.println(firstEdge);
-
-        // Read the edges and insert
-        // String line = "EMPTY";/**
-        /*
-         * *
-         * while( graphFile.hasNextLine( ) )
-         * {
-         * //System.out.println(line);
-         * line = graphFile.nextLine( );
-         * StringTokenizer st = new StringTokenizer( line );
-         * 
-         * try
-         * {
-         * if( st.countTokens( ) != 3 )
-         * {
-         * System.err.println( "Skipping ill-formatted line " + line );
-         * continue;
-         * }
-         * String source = st.nextToken( );
-         * String dest = st.nextToken( );
-         * int cost = Integer.parseInt( st.nextToken( ) );
-         * g.addEdge( source, dest, cost );
-         * }
-         * catch( NumberFormatException e )
-         * { System.err.println( "Skipping ill-formatted line " + line ); }
-         * }
-         * graphFile.close();//added this yoooh
-         * }
-         */
-
-        // Vertex v= new Vertex();
-
-        // System.out.println( "File read..." );
-        // System.out.println( g.vertexMap.size( ) + " vertices" );
-        // System.out.println("Vertex"+ " Edge"+ " eCount"+ " vCount"+ " pqCount");
-        // System.out.println( g.vertexMap.values().toArray()[0] +" , "+ /**firstEdge +"
-        // ,"+ */ eCount+ " , "+vCount+" , "+ pqCount);//change all these avlues to
-        // static
-
-        // Scanner in = new Scanner( System.in );
-        // while( processRequest( in, g ) )
-
-        // }
+       
+      
+       
 
     }
 }

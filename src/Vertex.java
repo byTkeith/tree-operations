@@ -19,6 +19,9 @@ class Vertex
     public void reset( )
     //  { dist = Graph.INFINITY; prev = null; pos = null; scratch = 0; }    
     { dist = Graph.INFINITY; prev = null; scratch = 0; }
+    /*
+     * converts the ascii value to a string 
+     */
     public String toString(){
         return name;
     }
