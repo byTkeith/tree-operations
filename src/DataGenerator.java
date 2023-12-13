@@ -32,15 +32,15 @@ public class DataGenerator{
 
         //String vertexName= "vertex"+Integer.toString(w)
 
-        FileWriter writer = new FileWriter("Dataset.v50.e80", true ) ;
-        for(int i=0; i<51;i++){
+        FileWriter writer = new FileWriter("Dataset.10.20.txt") ;
+        for(int i=0; i<11;i++){
             //if(i==i){continue;}
-            for(int j=0; j<51 ; j++){
+            for(int j=0; j<11 ; j++){
                 if(i==j){
                     continue;
                 }
                 if(costs.nextInt(2)==0){
-                    int weight = costs.nextInt(80) + 1;
+                    int weight = costs.nextInt(20) + 1;
                        // vertices.get(v).add(new Path(vi, weight));
                        String twoVertices= "vertex"+i+" "+"vertex"+j;
                        writer.write(twoVertices+" "+weight+"\n");

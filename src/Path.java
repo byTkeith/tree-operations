@@ -2,7 +2,7 @@
 
 // Represents an entry in the priority queue for Dijkstra's algorithm.
 // 
-class Path implements Comparable<Path>
+public class Path implements Comparable<Path>
 {
     public Vertex     dest;   // w
     public double     cost;   // d(w)
